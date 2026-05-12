@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Set-Location \"c:\\\\Users\\\\pushk\\\\OneDrive\\\\Desktop\\\\msquare\"; $env:NEXT_TELEMETRY_DISABLED = \"1\"; npx next build 2>&1 | Tee-Object -Variable buildOut; Write-Output \"EXIT:$LASTEXITCODE\"; $buildOut | Select-String -Pattern \"error|Error|warn|Route|compiled|Failed|success\" -SimpleMatch)"
+    ]
+  }
+}

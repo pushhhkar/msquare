@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-medium tracking-tight text-text-primary;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+  
+  p {
+    @apply text-text-secondary leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Buttons - Strict B&W */
+  .btn-primary {
+    @apply bg-white text-black px-6 py-3 rounded-md font-medium text-sm 
+           hover:bg-gray-200 active:bg-gray-300 
+           transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-white/20;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-white px-6 py-3 rounded-md font-medium text-sm 
+           border border-border hover:bg-surface-raised hover:border-border-strong
+           active:bg-surface
+           transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-white/10;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-text-secondary px-4 py-2 rounded-md font-medium text-sm 
+           hover:text-text-primary hover:bg-surface-raised
+           active:text-white
+           transition-colors duration-150;
+  }
+  
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  /* Cards - Sharp, structured */
+  .card {
+    @apply bg-surface border border-border rounded-lg p-6 
+           hover:border-border-strong hover:bg-surface-raised
+           transition-colors duration-150;
+  }
+  
+  .card-interactive {
+    @apply bg-surface border border-border rounded-lg p-6 cursor-pointer
+           hover:border-border-strong hover:bg-surface-raised
+           active:bg-surface
+           transition-colors duration-150;
+  }
+  
+  /* Text hierarchy */
+  .text-heading {
+    @apply text-text-primary font-medium tracking-tight;
+  }
+  
+  .text-body {
+    @apply text-text-secondary leading-relaxed;
+  }
+  
+  .text-caption {
+    @apply text-text-muted text-sm;
+  }
+  
+  /* Navigation */
+  .nav-sticky {
+    @apply sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border;
+  }
+  
+  /* Dividers */
+  .divider {
+    @apply border-t border-border;
+  }
+  
+  .divider-strong {
+    @apply border-t border-border-strong;
+  }
+  
+  /* Stats */
+  .stat-number {
+    @apply text-3xl md:text-4xl font-sans font-semibold text-text-primary tracking-tight;
+  }
+  
+  .stat-label {
+    @apply text-text-muted text-sm;
+  }
+  
+  /* Input fields */
+  .input {
+    @apply bg-surface border border-border rounded-md px-4 py-2.5 text-sm text-text-primary
+           placeholder:text-text-muted
+           focus:outline-none focus:border-border-strong focus:ring-1 focus:ring-border-strong
+           hover:border-border-strong
+           transition-colors duration-150;
+  }
+  
+  /* Badges/Tags */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium
+           bg-surface-raised text-text-secondary border border-border;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Subtle shadows for depth - no colors */
+  .shadow-elevated {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Focus ring for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black;
+  }
+}
