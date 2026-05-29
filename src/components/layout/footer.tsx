@@ -39,9 +39,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <Link href="/" aria-label="M Square — home">
-              <Logo size="lg" className="mb-6" />
-            </Link>
+            <Logo size="lg" className="mb-6" />
             <p className="text-zinc-400 mb-6 max-w-md leading-relaxed text-sm">
               Transforming Digital Identities into Legacies. We build robust digital ecosystems
               where data-driven strategy meets high-end design — since 1996.
@@ -118,7 +116,7 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-zinc-900 rounded-md flex items-center justify-center" aria-hidden="true">
                   <MapPin className="h-4 w-4 text-zinc-300" />
                 </div>
-                <span className="text-sm">Bangalore, India</span>
+                <span className="text-sm">Gurugram, Haryana, India</span>
               </div>
             </div>
             <Button

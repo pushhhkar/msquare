@@ -351,7 +351,7 @@ export default function FunnelPage() {
                               value={formData.phone}
                               onChange={(e) => updateFormData('phone', e.target.value)}
                               className="w-full pl-10 pr-4 py-3 bg-zinc-800 border border-zinc-700 text-white rounded-lg placeholder-zinc-500 focus:ring-2 focus:ring-primary-orange focus:border-transparent"
-                              placeholder="+91 98765 43210"
+                              placeholder="+91 9870202444"
                             />
                           </div>
                         </div>

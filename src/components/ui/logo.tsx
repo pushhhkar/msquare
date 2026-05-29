@@ -31,7 +31,7 @@ export function Logo({
         dimensions.container
       )}>
         <Image
-          src="/msquaretransparentlogo.png"
+          src="/msplg.jpeg"
           alt="M Square"
           width={dimensions.image}
           height={dimensions.image}
@@ -56,7 +56,7 @@ export function LogoIcon({
       className
     )}>
       <Image
-        src="/msquaretransparentlogo.png"
+        src="/msplg.jpeg"
         alt="M Square"
         width={dimensions.image}
         height={dimensions.image}

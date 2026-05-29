@@ -1,19 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
 
-// ─── In-process rate limiter ──────────────────────────────────────────────────
-// Keyed by IP. Stores { count, windowStart } per IP.
-// Window: 10 requests per 60 seconds. Resets automatically.
-// For multi-instance deployments (Vercel Edge), swap this map for
-// an Upstash Redis store using the same interface.
-
-interface RateLimitEntry {
-  count: number
-  windowStart: number
-}
-
+// ─── Rate limiter ─────────────────────────────────────────────────────────────
+interface RateLimitEntry { count: number; windowStart: number }
 const rateLimitMap = new Map<string, RateLimitEntry>()
-const WINDOW_MS = 60_000   // 1 minute
-const MAX_REQUESTS = 5     // max 5 subscribe attempts per IP per minute
+const WINDOW_MS = 60_000
+const MAX_REQUESTS = 5
 
 function getClientIp(req: NextRequest): string {
   return (
@@ -26,29 +18,20 @@ function getClientIp(req: NextRequest): string {
 function isRateLimited(ip: string): boolean {
   const now = Date.now()
   const entry = rateLimitMap.get(ip)
-
   if (!entry || now - entry.windowStart > WINDOW_MS) {
-    // First request in this window
     rateLimitMap.set(ip, { count: 1, windowStart: now })
     return false
   }
-
   if (entry.count >= MAX_REQUESTS) return true
-
   entry.count++
   return false
 }
 
-// ─── Email validation ─────────────────────────────────────────────────────────
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 // ─── Route handler ────────────────────────────────────────────────────────────
-
 export async function POST(req: NextRequest) {
   const ip = getClientIp(req)
-
-  // 1. Rate limit
   if (isRateLimited(ip)) {
     return NextResponse.json(
       { error: 'Too many requests. Please wait a minute and try again.' },
@@ -56,7 +39,6 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  // 2. Parse body
   let body: unknown
   try {
     body = await req.json()
@@ -64,68 +46,88 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 })
   }
 
-  const email = typeof (body as Record<string, unknown>).email === 'string'
-    ? ((body as Record<string, unknown>).email as string).trim().toLowerCase()
-    : ''
+  const email =
+    typeof (body as Record<string, unknown>).email === 'string'
+      ? ((body as Record<string, unknown>).email as string).trim().toLowerCase()
+      : ''
 
-  // 3. Validate email
   if (!email || !EMAIL_RE.test(email)) {
     return NextResponse.json({ error: 'A valid email address is required.' }, { status: 422 })
   }
 
-  // 4. Forward to email provider
-  // Replace the block below with your provider SDK call.
-  // Examples:
-  //   Mailchimp:   POST to /3.0/lists/{listId}/members
-  //   ConvertKit:  POST to /v3/forms/{formId}/subscribe
-  //   Loops.so:    POST to /v1/contacts/create
-  //   Brevo:       POST to /v3/contacts
+  const apiKey = process.env.RESEND_API_KEY
+  const toEmail = process.env.CONTACT_TO_EMAIL ?? 'info@msquareprofessionals.com'
+  const fromEmail = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev'
+  const fromName = process.env.RESEND_FROM_NAME ?? 'M Square Website'
 
-  const PROVIDER_URL = process.env.NEWSLETTER_PROVIDER_URL
-  const PROVIDER_KEY = process.env.NEWSLETTER_API_KEY
-
-  if (PROVIDER_URL && PROVIDER_KEY) {
-    try {
-      const providerRes = await fetch(PROVIDER_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${PROVIDER_KEY}`,
-        },
-        body: JSON.stringify({ email }),
-      })
-
-      if (providerRes.status === 409 || providerRes.status === 400) {
-        // Provider treats duplicate emails as 409/400
-        return NextResponse.json(
-          { error: "You're already subscribed." },
-          { status: 409 }
-        )
-      }
-
-      if (!providerRes.ok) {
-        console.error('[newsletter] Provider error', providerRes.status)
-        return NextResponse.json(
-          { error: 'Subscription failed. Please try again.' },
-          { status: 502 }
-        )
-      }
-    } catch (err) {
-      console.error('[newsletter] Network error reaching provider', err)
-      return NextResponse.json(
-        { error: 'Subscription failed. Please try again.' },
-        { status: 502 }
-      )
-    }
-  } else {
-    // No provider configured — log and succeed in development
-    console.info('[newsletter] No provider configured. Would subscribe:', email)
+  if (!apiKey || apiKey === 're_your_api_key_here') {
+    console.info('[newsletter] No Resend API key. Would subscribe:', email)
+    return NextResponse.json({ success: true }, { status: 200 })
   }
 
-  return NextResponse.json({ success: true }, { status: 200 })
+  const resend = new Resend(apiKey)
+
+  try {
+    // Notify the team
+    await resend.emails.send({
+      from: `${fromName} <${fromEmail}>`,
+      to: toEmail,
+      subject: `New Newsletter Subscriber — ${email}`,
+      html: `
+        <div style="font-family:Arial,sans-serif;max-width:500px;margin:0 auto;">
+          <div style="background:#f97316;padding:20px 28px;border-radius:8px 8px 0 0;">
+            <h2 style="color:#fff;margin:0;font-size:18px;">New Subscriber</h2>
+          </div>
+          <div style="background:#fff;padding:28px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;">
+            <p style="margin:0;font-size:16px;"><strong>${email}</strong> just subscribed to the M Square Growth Blog.</p>
+            <p style="margin:12px 0 0;font-size:12px;color:#9ca3af;">Received at ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST</p>
+          </div>
+        </div>
+      `,
+    })
+
+    // Send welcome email to subscriber
+    await resend.emails.send({
+      from: `${fromName} <${fromEmail}>`,
+      to: email,
+      replyTo: toEmail,
+      subject: "You're on the M Square list.",
+      html: `
+        <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;color:#111;">
+          <div style="background:#000;padding:28px 32px;border-radius:8px 8px 0 0;">
+            <h1 style="color:#fff;margin:0;font-size:22px;">M Square</h1>
+            <p style="color:#f97316;margin:4px 0 0;font-size:13px;letter-spacing:0.05em;">TECH-FIRST GROWTH STUDIO</p>
+          </div>
+          <div style="background:#fff;padding:36px 32px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;">
+            <h2 style="margin:0 0 16px;font-size:20px;">You&rsquo;re on the list.</h2>
+            <p style="margin:0 0 16px;line-height:1.6;color:#374151;">
+              Every Friday we send one focused insight — performance marketing tactics,
+              engineering deep-dives, or case study breakdowns from our work with real clients.
+              No fluff, no filler.
+            </p>
+            <p style="margin:0 0 24px;line-height:1.6;color:#374151;">
+              Your first email arrives this Friday.
+            </p>
+            <hr style="border:none;border-top:1px solid #e5e7eb;margin:0 0 24px;" />
+            <p style="margin:0;font-size:12px;color:#9ca3af;">
+              MSquare Professionals Pvt Ltd · SCO 40, 4th Floor, Sector 15, Gurugram 122002<br/>
+              <a href="mailto:info@msquareprofessionals.com" style="color:#f97316;">info@msquareprofessionals.com</a>
+            </p>
+          </div>
+        </div>
+      `,
+    })
+
+    return NextResponse.json({ success: true }, { status: 200 })
+  } catch (err) {
+    console.error('[newsletter] Resend error:', err)
+    return NextResponse.json(
+      { error: 'Subscription failed. Please try again.' },
+      { status: 502 }
+    )
+  }
 }
 
-// Reject non-POST methods
 export async function GET() {
   return NextResponse.json({ error: 'Method not allowed.' }, { status: 405 })
 }

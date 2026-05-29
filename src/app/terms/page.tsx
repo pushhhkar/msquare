@@ -6,14 +6,22 @@ import { LegalLayout } from '@/components/ui/legal-layout'
 import type { LegalSection } from '@/components/ui/legal-layout'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | M Square',
+  title: 'Terms of Service',
   description:
-    'Terms and conditions governing your use of M Square services and website. Governed by Indian law, Bangalore jurisdiction.',
-  keywords: 'M Square terms of service, service agreement, terms and conditions',
+    'Terms and conditions governing your use of M Square services and website. Governed by Indian law, Gurugram jurisdiction.',
+  keywords: ['M Square terms of service', 'service agreement', 'terms and conditions'],
+  alternates: { canonical: '/terms' },
+  openGraph: {
+    title: 'Terms of Service | M Square',
+    description: 'Terms and conditions governing your use of M Square services and website.',
+    url: '/terms',
+    type: 'website',
+  },
+  robots: { index: true, follow: false },
 }
 
 const LAST_UPDATED = 'May 12, 2025'
-const EMAIL = 'legal@msquare.agency'
+const EMAIL = 'info@msquareprofessionals.com'
 
 const sections: LegalSection[] = [
   {
@@ -183,7 +191,7 @@ const sections: LegalSection[] = [
     content: (
       <p>
         These Terms are governed by the laws of India, and any disputes shall be subject to the
-        exclusive jurisdiction of the courts of Bangalore, Karnataka.
+        exclusive jurisdiction of the courts of Gurugram, Haryana.
       </p>
     ),
   },

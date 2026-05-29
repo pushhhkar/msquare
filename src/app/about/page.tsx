@@ -79,7 +79,7 @@ const TIMELINE = [
     year: '2018',
     title: 'Global Reach',
     description:
-      'Opened regional offices in Dubai and London, extending our reach to MENA and European markets while headquartering innovation in Bangalore.',
+      'Opened regional offices in Dubai and London, extending our reach to MENA and European markets while headquartering innovation in Gurugram.',
   },
   {
     year: '2022',
@@ -120,8 +120,6 @@ const APPROACH = [
 ]
 
 export default function AboutPage() {
-  const yearsActive = new Date().getFullYear() - brand.foundedYear
-
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -139,7 +137,7 @@ export default function AboutPage() {
               Our Story
             </span>
             <h1 className="font-display text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-              {yearsActive}+ Years of
+              Est. {brand.foundedYear}
               <span className="block text-zinc-500">Digital Transformation</span>
             </h1>
             <p className="text-xl text-zinc-400 leading-relaxed max-w-3xl mb-12">

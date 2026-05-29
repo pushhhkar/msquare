@@ -6,14 +6,22 @@ import { LegalLayout } from '@/components/ui/legal-layout'
 import type { LegalSection } from '@/components/ui/legal-layout'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | M Square',
+  title: 'Privacy Policy',
   description:
-    'How M Square collects, uses, and protects your personal data. GDPR and CCPA compliant. Data controller: privacy@msquare.agency',
-  keywords: 'M Square privacy policy, GDPR compliant, data protection, CCPA',
+    'How M Square collects, uses, and protects your personal data. GDPR and CCPA compliant. Data controller: info@msquareprofessionals.com',
+  keywords: ['M Square privacy policy', 'GDPR compliant', 'data protection', 'CCPA'],
+  alternates: { canonical: '/privacy' },
+  openGraph: {
+    title: 'Privacy Policy | M Square',
+    description: 'How M Square collects, uses, and protects your personal data. GDPR and CCPA compliant.',
+    url: '/privacy',
+    type: 'website',
+  },
+  robots: { index: true, follow: false },
 }
 
 const LAST_UPDATED = 'May 12, 2025'
-const EMAIL = 'privacy@msquare.agency'
+const EMAIL = 'info@msquareprofessionals.com'
 
 const sections: LegalSection[] = [
   {
@@ -23,7 +31,7 @@ const sections: LegalSection[] = [
       <>
         <p>
           M Square (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is a
-          tech-first growth studio headquartered in Bangalore, India. We operate the website{' '}
+          tech-first growth studio headquartered in Gurugram, Haryana, India. We operate the website{' '}
           <strong>msquare.agency</strong> and related digital services.
         </p>
         <p>

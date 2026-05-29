@@ -22,7 +22,16 @@ export default function Navigation() {
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20)
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -41,16 +50,14 @@ export default function Navigation() {
       aria-label="Main navigation"
       className={`sticky top-0 z-50 transition-all duration-200 border-b ${
         isScrolled
-          ? 'bg-black/95 backdrop-blur-md border-zinc-900'
-          : 'bg-black border-transparent'
+          ? 'bg-white/95 backdrop-blur-md border-zinc-200'
+          : 'bg-white border-zinc-200'
       }`}
     >
       <div className="w-full px-8">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-16">
           {/* Logo — far left */}
-          <Link href="/" aria-label="M Square — home">
-            <Logo size="xl" />
-          </Link>
+          <Logo size="lg" />
 
           {/* Desktop nav — center */}
           <div className="hidden lg:flex items-center space-x-8" role="list">
@@ -63,7 +70,7 @@ export default function Navigation() {
                   role="listitem"
                   aria-current={active ? 'page' : undefined}
                   className={`relative text-lg font-medium transition-colors duration-150 group ${
-                    active ? 'text-white' : 'text-zinc-400 hover:text-white'
+                    active ? 'text-zinc-900' : 'text-zinc-500 hover:text-zinc-900'
                   }`}
                 >
                   {item.name}
@@ -94,13 +101,13 @@ export default function Navigation() {
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
-            className="lg:hidden p-2 rounded-md hover:bg-zinc-900 transition-colors duration-150"
+            className="lg:hidden p-2 rounded-md hover:bg-zinc-100 transition-colors duration-150"
             onClick={() => setIsMobileMenuOpen((v) => !v)}
           >
             {isMobileMenuOpen ? (
-              <X className="h-5 w-5 text-white" />
+              <X className="h-5 w-5 text-zinc-900" />
             ) : (
-              <Menu className="h-5 w-5 text-white" />
+              <Menu className="h-5 w-5 text-zinc-900" />
             )}
           </button>
         </div>
@@ -111,7 +118,7 @@ export default function Navigation() {
           initial={false}
           animate={isMobileMenuOpen ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
           transition={{ duration: 0.2 }}
-          className="lg:hidden overflow-hidden border-t border-zinc-900"
+          className="lg:hidden overflow-hidden border-t border-zinc-200"
         >
           <div className="py-4 space-y-1">
             {NAV_LINKS.map((item) => {
@@ -123,8 +130,8 @@ export default function Navigation() {
                   aria-current={active ? 'page' : undefined}
                   className={`flex items-center gap-2 text-sm font-medium transition-colors duration-150 px-4 py-3 rounded-md ${
                     active
-                      ? 'text-white bg-zinc-900'
-                      : 'text-zinc-400 hover:text-white hover:bg-zinc-900'
+                      ? 'text-zinc-900 bg-zinc-100'
+                      : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'
                   }`}
                 >
                   {active && (

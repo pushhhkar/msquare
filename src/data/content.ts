@@ -2,7 +2,7 @@
 
 export const brand = {
   name: 'M Square',
-  legalName: 'Msquare Professionals',
+  legalName: 'MSquare Professionals Pvt Ltd',
   tagline: 'Transforming Digital Identities into Legacies.',
   mission:
     'To be the most trusted digital acceleration partner for ambitious brands — fusing cutting-edge engineering with data-driven strategy to build ecosystems that don\'t just perform, but endure.',
@@ -17,7 +17,7 @@ export const brand = {
 
 export const stats = [
   { value: '100+', label: 'Platforms Designed', accent: 'orange' as const },
-  { value: `${new Date().getFullYear() - 1996}+`, label: 'Years of Visionary Partnership', accent: 'blue' as const },
+  { value: '29+', label: 'Years of Visionary Partnership', accent: 'blue' as const },
   { value: '98%', label: 'Client Retention', accent: 'orange' as const },
   { value: '3.2x', label: 'Average ROI Delivered', accent: 'blue' as const },
 ]
@@ -25,40 +25,22 @@ export const stats = [
 // ─── Contact & Offices ────────────────────────────────────────────────────────
 
 export const contact = {
-  email: 'hello@msquareprofessionals.com',
-  legalEmail: 'legal@msquare.agency',
-  privacyEmail: 'privacy@msquare.agency',
-  phone: '+91 98765 43210',
+  email: 'info@msquareprofessionals.com',
+  legalEmail: 'info@msquareprofessionals.com',
+  privacyEmail: 'info@msquareprofessionals.com',
+  phone: '+91 9870202444',
   responseTime: '24 hours',
 }
 
 export const offices = [
   {
-    city: 'Bangalore',
+    city: 'Gurugram',
     country: 'India',
     region: 'Headquarters',
-    address: 'Koramangala, Bangalore — 560 034, Karnataka, India',
-    phone: '+91 98765 43210',
-    email: 'hello@msquareprofessionals.com',
+    address: 'SCO 40, 4th Floor, Civil Line, Sector 15, Gurugram, Haryana 122002',
+    phone: '+91 9870202444',
+    email: 'info@msquareprofessionals.com',
     timezone: 'IST (UTC +5:30)',
-  },
-  {
-    city: 'Dubai',
-    country: 'UAE',
-    region: 'Middle East',
-    address: 'Business Bay, Dubai, United Arab Emirates',
-    phone: '+971 4 000 0000',
-    email: 'mena@msquareprofessionals.com',
-    timezone: 'GST (UTC +4)',
-  },
-  {
-    city: 'London',
-    country: 'UK',
-    region: 'Europe',
-    address: 'Canary Wharf, London E14, United Kingdom',
-    phone: '+44 20 0000 0000',
-    email: 'europe@msquareprofessionals.com',
-    timezone: 'GMT (UTC +0 / +1)',
   },
 ]
 
@@ -231,20 +213,20 @@ export const seoMeta = {
   contact: {
     title: 'Contact M Square — Let\'s Scale Your Brand',
     description:
-      'Get in touch with M Square. We respond within 24 hours. Offices in Bangalore, Dubai, and London. Email: hello@msquareprofessionals.com',
+      'Get in touch with M Square. We respond within 24 hours. HQ: SCO 40, Sector 15, Gurugram. Email: info@msquareprofessionals.com | Phone: +91 9870202444.',
     keywords:
-      'contact M Square, digital agency contact Bangalore, hire growth agency India, web development quote',
+      'contact M Square, digital agency Gurugram, hire growth agency India, web development quote',
   },
   privacy: {
     title: 'Privacy Policy | M Square',
     description:
-      'How M Square collects, uses, and protects your personal data. GDPR and CCPA compliant. Data controller: privacy@msquare.agency',
+      'How M Square collects, uses, and protects your personal data. GDPR and CCPA compliant. Data controller: info@msquareprofessionals.com',
     keywords: 'M Square privacy policy, GDPR compliant, data protection',
   },
   terms: {
     title: 'Terms of Service | M Square',
     description:
-      'Terms and conditions governing your use of M Square services and website. Governed by Indian law, Bangalore jurisdiction.',
+      'Terms and conditions governing your use of M Square services and website. Governed by Indian law, Gurugram jurisdiction.',
     keywords: 'M Square terms of service, service agreement, terms and conditions',
   },
 }
