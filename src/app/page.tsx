@@ -4,25 +4,32 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle2, Code2, Megaphone } from 'lucide-react'
+import { ArrowRight, CheckCircle2, TrendingUp, Cog, Code2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import Navigation from '@/components/layout/navigation'
 import Footer from '@/components/layout/footer'
-import { stats as siteStats } from '@/data/content'
-
-const TECH_ITEMS = [
-  'High-performance Next.js Web Development',
-  'Native-quality iOS & Android Apps',
-  'Awwwards-level UI/UX Design',
-  'Custom CRM & Automation Platforms',
-]
+import { stats as siteStats, brand } from '@/data/content'
 
 const MARKETING_ITEMS = [
-  'SEO, PPC & High-ROI Lead Generation',
-  'Social Media, Influencer Marketing & PR',
-  'OOH Advertising & Branding Kits',
-  'Market Research & Competitive Analysis',
+  'Performance Marketing & Lead Generation',
+  'SEO, SEM & Search Dominance',
+  'Social Media Marketing',
+  'Branding & Digital Strategy',
+]
+
+const AUTOMATION_ITEMS = [
+  'CRM Solutions & Lead Management',
+  'Workflow & Sales Automation',
+  'Attendance Management Systems',
+  'Process Digitization',
+]
+
+const TECH_ITEMS = [
+  'Custom Software & Web Applications',
+  'Mobile Apps (iOS & Android)',
+  'Enterprise Software Solutions',
+  'API Integrations & Automation Platforms',
 ]
 
 export default function HomePage() {
@@ -42,7 +49,7 @@ export default function HomePage() {
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
         />
-        <div className="absolute inset-0 bg-black/55 z-[1]" />
+        <div className="absolute inset-0 bg-black/60 z-[1]" />
 
         <div className="container-custom relative z-10 w-full">
           <motion.div
@@ -58,7 +65,7 @@ export default function HomePage() {
               className="mb-3 sm:mb-4"
             >
               <span className="inline-block px-4 py-2 bg-primary-orange/10 border border-primary-orange/20 rounded-full text-primary-orange text-xs sm:text-sm font-medium tracking-wide">
-                TECH-FIRST GROWTH STUDIO
+                BUSINESS GROWTH INFRASTRUCTURE COMPANY
               </span>
             </motion.div>
 
@@ -68,8 +75,8 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Transforming Digital Identities
-              <span className="block text-zinc-400 mt-1 sm:mt-2">into Legacies.</span>
+              Building Growth Infrastructure
+              <span className="block text-zinc-400 mt-1 sm:mt-2">for Modern Businesses.</span>
             </motion.h1>
 
             <motion.p
@@ -78,9 +85,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              At Msquare, we build robust digital ecosystems where data-driven strategy meets
-              high-end design. We empower brands to scale through cutting-edge technology and
-              360° marketing solutions.
+              {brand.positioning}
             </motion.p>
 
             <motion.div
@@ -89,9 +94,9 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <Button asChild size="lg" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 group" aria-label="Scale your brand — contact M Square">
+              <Button asChild size="lg" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 group" aria-label="Build your growth system with MSquare">
                 <Link href="/contact">
-                  Scale Your Brand
+                  Build Your Growth System
                   <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -111,13 +116,13 @@ export default function HomePage() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-6xl font-display font-bold text-white mb-6">
-              Trusted by Industry Leaders
+            <h2 className="text-3xl lg:text-5xl font-display font-bold text-white mb-4">
+              Trusted by Growing Businesses
             </h2>
-            <p className="text-xl text-zinc-400 max-w-3xl mx-auto font-light">
-              100+ platforms designed. 29+ years of visionary partnership. One focus: compounding your growth.
+            <p className="text-lg text-zinc-400 max-w-2xl mx-auto font-light">
+              From startups to enterprises — we build the systems that make growth predictable.
             </p>
           </motion.div>
 
@@ -129,7 +134,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-zinc-950 border border-zinc-800 rounded-2xl p-8 text-center hover:border-zinc-700 transition-colors duration-200"
+                className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 text-center hover:border-zinc-700 transition-colors duration-200"
               >
                 <div className={`font-display text-5xl font-bold mb-2 ${stat.accent === 'orange' ? 'text-primary-orange' : 'text-primary-blue'}`}>
                   {stat.value}
@@ -141,7 +146,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Two Pillars ── */}
+      {/* ── Three Pillars ── */}
       <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
@@ -152,38 +157,36 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-display font-bold text-white mb-4">
-              Two Pillars of Growth
+              One Partner. One Ecosystem.
             </h2>
             <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-              Cutting-edge technology and full-funnel marketing — engineered to work as one unstoppable system.
+              Marketing, automation, and technology — designed to work together as a single, connected growth system.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Tech */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Growth Marketing */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full bg-zinc-950 border border-zinc-800 hover:border-primary-blue/40 transition-all duration-300 hover:shadow-xl rounded-2xl">
+              <Card className="h-full bg-zinc-950 border border-zinc-800 hover:border-primary-orange/40 transition-all duration-300 rounded-2xl">
                 <CardHeader>
-                  <div className="w-14 h-14 bg-primary-blue/10 rounded-xl flex items-center justify-center mb-4">
-                    <Code2 className="h-7 w-7 text-primary-blue" />
+                  <div className="w-14 h-14 bg-primary-orange/10 rounded-xl flex items-center justify-center mb-4">
+                    <TrendingUp className="h-7 w-7 text-primary-orange" />
                   </div>
-                  <CardTitle className="text-2xl font-display text-white">
-                    Next-Gen Technology
-                  </CardTitle>
-                  <CardDescription className="text-base text-zinc-400">
-                    High-performance digital products — web, mobile, and bespoke automation — built to scale.
+                  <CardTitle className="text-xl font-display text-white">Growth Marketing</CardTitle>
+                  <CardDescription className="text-sm text-zinc-400">
+                    Attract the right customers and generate qualified leads through data-driven marketing.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {TECH_ITEMS.map((item) => (
-                      <li key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-4 w-4 text-primary-blue flex-shrink-0" />
+                    {MARKETING_ITEMS.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-primary-orange flex-shrink-0 mt-0.5" />
                         <span className="text-zinc-400 text-sm">{item}</span>
                       </li>
                     ))}
@@ -192,30 +195,58 @@ export default function HomePage() {
               </Card>
             </motion.div>
 
-            {/* Marketing */}
+            {/* Business Automation */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full bg-zinc-950 border border-zinc-800 hover:border-primary-orange/40 transition-all duration-300 hover:shadow-xl rounded-2xl">
+              <Card className="h-full bg-zinc-950 border border-zinc-800 hover:border-primary-blue/40 transition-all duration-300 rounded-2xl">
                 <CardHeader>
-                  <div className="w-14 h-14 bg-primary-orange/10 rounded-xl flex items-center justify-center mb-4">
-                    <Megaphone className="h-7 w-7 text-primary-orange" />
+                  <div className="w-14 h-14 bg-primary-blue/10 rounded-xl flex items-center justify-center mb-4">
+                    <Cog className="h-7 w-7 text-primary-blue" />
                   </div>
-                  <CardTitle className="text-2xl font-display text-white">
-                    Marketing Dominance
-                  </CardTitle>
-                  <CardDescription className="text-base text-zinc-400">
-                    Full-funnel growth execution from performance media to brand narratives that command premium positioning.
+                  <CardTitle className="text-xl font-display text-white">Business Automation</CardTitle>
+                  <CardDescription className="text-sm text-zinc-400">
+                    Eliminate manual work and build connected systems that scale your operations.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {MARKETING_ITEMS.map((item) => (
-                      <li key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-4 w-4 text-primary-orange flex-shrink-0" />
+                    {AUTOMATION_ITEMS.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-primary-blue flex-shrink-0 mt-0.5" />
+                        <span className="text-zinc-400 text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Technology Solutions */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full bg-zinc-950 border border-zinc-800 hover:border-zinc-600/40 transition-all duration-300 rounded-2xl">
+                <CardHeader>
+                  <div className="w-14 h-14 bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+                    <Code2 className="h-7 w-7 text-zinc-300" />
+                  </div>
+                  <CardTitle className="text-xl font-display text-white">Technology Solutions</CardTitle>
+                  <CardDescription className="text-sm text-zinc-400">
+                    Custom software, web and mobile apps, and enterprise platforms built for your business.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {TECH_ITEMS.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-zinc-400 flex-shrink-0 mt-0.5" />
                         <span className="text-zinc-400 text-sm">{item}</span>
                       </li>
                     ))}
@@ -252,20 +283,21 @@ export default function HomePage() {
           className="text-center max-w-4xl mx-auto"
         >
           <h2 className="text-3xl lg:text-5xl font-display font-bold text-white mb-6">
-            Ready to Build Your Legacy?
+            Ready to Make Growth Predictable?
           </h2>
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Stop guessing. Start growing. Let&apos;s build a digital ecosystem that scales your
-            brand and dominates your market.
+            Stop managing disconnected systems. Let&apos;s build a connected growth ecosystem that
+            attracts customers, automates operations, and scales with confidence.
           </p>
           <Button
             asChild
             size="lg"
             variant="outline"
             className="bg-white text-black hover:bg-zinc-100 border-white text-lg px-8 py-4 group"
+            aria-label="Build your growth system with MSquare"
           >
             <Link href="/contact">
-              Scale Your Brand
+              Build Your Growth System
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

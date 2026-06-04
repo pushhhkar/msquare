@@ -1,23 +1,26 @@
 // ─── Brand & Mission ─────────────────────────────────────────────────────────
 
 export const brand = {
-  name: 'M Square',
-  legalName: 'MSquare Professionals Pvt Ltd',
-  tagline: 'Transforming Digital Identities into Legacies.',
+  name: 'MSquare',
+  legalName: 'MSquare Professionals Pvt. Ltd.',
+  tagline: 'One Partner. One Ecosystem. Unlimited Growth.',
+  positioning:
+    'MSquare Professionals Pvt. Ltd. is a Business Growth Infrastructure Company that helps organizations attract customers, automate operations, and scale through connected technology ecosystems.',
   mission:
-    'To be the most trusted digital acceleration partner for ambitious brands — fusing cutting-edge engineering with data-driven strategy to build ecosystems that don\'t just perform, but endure.',
+    'To empower businesses with integrated marketing, automation, and technology solutions that transform growth from a challenge into a predictable and scalable process.',
   vision:
-    'A world where every business, regardless of scale, has access to enterprise-grade technology and marketing intelligence that compounds their competitive advantage over time.',
+    'To become the most trusted Business Growth Infrastructure Company, enabling organizations to build intelligent, connected systems that simplify operations, accelerate growth, and create lasting competitive advantages.',
   about:
-    'At M Square, we build robust digital ecosystems where data-driven strategy meets high-end design. Founded on the belief that technology and creativity are not opposing forces but a single, unified growth engine, we empower brands to scale through cutting-edge technology and 360° marketing solutions.',
-  foundedYear: 1996,
+    'Businesses today face a common challenge: growth is managed through disconnected systems, multiple service providers, and fragmented processes. MSquare was founded to solve this. We bring together Growth Marketing, Business Automation, and Custom Software Development under one roof — creating connected ecosystems that drive measurable business outcomes.',
+  foundedYear: 2023,
+  incorporatedYear: 2026,
 }
 
 // ─── Stats & Social Proof ─────────────────────────────────────────────────────
 
 export const stats = [
-  { value: '100+', label: 'Platforms Designed', accent: 'orange' as const },
-  { value: '29+', label: 'Years of Visionary Partnership', accent: 'blue' as const },
+  { value: '100+', label: 'Platforms Built', accent: 'orange' as const },
+  { value: '3', label: 'Core Practice Areas', accent: 'blue' as const },
   { value: '98%', label: 'Client Retention', accent: 'orange' as const },
   { value: '3.2x', label: 'Average ROI Delivered', accent: 'blue' as const },
 ]
@@ -60,62 +63,97 @@ export const verticals: Vertical[] = [
   {
     id: 'healthcare',
     label: 'Healthcare',
-    sector: 'Telemedicine & HealthTech',
-    headline: 'Digital Health that Scales',
+    sector: 'Healthcare Organizations',
+    headline: 'Growth Systems for Healthcare',
     description:
-      'We build HIPAA-aligned telemedicine platforms, patient engagement portals, and clinical workflow automation that reduce overhead and extend care to more patients.',
+      'Patient acquisition, CRM automation, appointment management, and digital presence for hospitals, clinics, and health-tech companies.',
     capabilities: [
+      'Patient lead generation & nurturing',
+      'Healthcare CRM & appointment systems',
       'Telemedicine platform development',
-      'EHR & medical billing integrations',
-      'Appointment scheduling automation',
-      'Patient data analytics & reporting',
+      'Healthcare SEO & digital marketing',
     ],
     icon: 'HeartPulse',
   },
   {
     id: 'education',
     label: 'Education',
-    sector: 'EdTech & LMS',
-    headline: 'Learning Systems Built for Outcomes',
+    sector: 'Educational Institutions',
+    headline: 'EdTech & Institutional Growth',
     description:
-      'From university LMS deployments to D2C e-learning platforms, we engineer adaptive learning experiences and content delivery pipelines that drive completion rates and revenue.',
+      'Student enrollment marketing, LMS platforms, fee management automation, and digital transformation for schools, colleges, and edtech companies.',
     capabilities: [
-      'Custom LMS development',
-      'Live & async video infrastructure',
-      'Gamification & engagement loops',
-      'Performance analytics dashboards',
+      'Student enrollment campaigns',
+      'LMS & learning platform development',
+      'Fee collection & ERP automation',
+      'Brand building for institutions',
     ],
     icon: 'GraduationCap',
   },
   {
     id: 'real-estate',
     label: 'Real Estate',
-    sector: 'PropTech',
-    headline: 'PropTech that Converts',
+    sector: 'Real Estate & PropTech',
+    headline: 'PropTech That Converts Buyers',
     description:
-      'High-intent lead generation, virtual property tour infrastructure, and CRM automation for developers and agencies — turning browsers into buyers at scale.',
+      'High-intent lead generation, CRM pipelines, site visit automation, and digital marketing for developers, brokers, and property management firms.',
     capabilities: [
-      'Hyper-local performance marketing',
-      'Virtual tour & 3D walkthrough integration',
-      'Lead scoring & CRM automation',
-      'Inventory & listing management systems',
+      'High-intent buyer lead generation',
+      'Real estate CRM & pipeline automation',
+      'Site visit scheduling systems',
+      'Performance marketing for developers',
     ],
     icon: 'Building2',
   },
   {
-    id: 'fintech',
-    label: 'Financial Services',
-    sector: 'Fintech',
-    headline: 'Compliant, Scalable, Fast',
+    id: 'retail',
+    label: 'Retail & Manufacturing',
+    sector: 'Retail & Manufacturing',
+    headline: 'Operations & Growth for Retailers',
     description:
-      'We engineer fintech interfaces, KYC/onboarding flows, and data dashboards that meet regulatory standards while delivering the seamless UX that modern users expect.',
+      'Inventory management, sales automation, e-commerce development, and performance marketing for retail businesses and manufacturers.',
     capabilities: [
-      'KYC & digital onboarding flows',
-      'Secure payment gateway integrations',
-      'Regulatory-compliant UI/UX',
-      'Real-time financial data dashboards',
+      'E-commerce development & marketing',
+      'Inventory & order management systems',
+      'Sales team automation & CRM',
+      'Supply chain digitization',
     ],
-    icon: 'Landmark',
+    icon: 'ShoppingBag',
+  },
+]
+
+// ─── Why MSquare ──────────────────────────────────────────────────────────────
+
+export const whyUs = [
+  {
+    title: 'One Partner. One Ecosystem.',
+    description:
+      'Marketing, automation, and technology solutions designed to work together seamlessly — no more juggling multiple vendors.',
+  },
+  {
+    title: 'Growth-Focused Approach',
+    description:
+      'Every solution is built around improving business performance, operational efficiency, and customer acquisition.',
+  },
+  {
+    title: 'Technology-Led Execution',
+    description:
+      'Strong software development and automation expertise enable us to solve business challenges beyond conventional marketing.',
+  },
+  {
+    title: 'End-to-End Capability',
+    description:
+      'From generating leads to managing customers and automating operations, we support the complete growth journey.',
+  },
+  {
+    title: 'Customized Solutions',
+    description:
+      'Every business is different. Our strategies, systems, and applications are tailored to specific goals and requirements.',
+  },
+  {
+    title: 'Measurable Business Impact',
+    description:
+      'We focus on delivering solutions that create tangible improvements in growth, efficiency, productivity, and profitability.',
   },
 ]
 
@@ -138,11 +176,11 @@ export const testimonials: Testimonial[] = [
     name: 'Priya Nair',
     role: 'Founder & CEO',
     company: 'Nair Retail Brands',
-    industry: 'E-Commerce',
+    industry: 'Retail',
     quote:
-      'M Square didn\'t just run our ads — they rebuilt our entire funnel. ROAS went from 1.8x to 4.1x in under three months. The automation they layered on top means our team spends zero time on manual reporting.',
-    metric: '4.1x',
-    metricLabel: 'ROAS',
+      'MSquare didn\'t just run our ads — they rebuilt our entire growth system. Lead quality improved dramatically and our sales team now works from a single automated pipeline. The results were visible within 60 days.',
+    metric: '3.8x',
+    metricLabel: 'Revenue Growth',
   },
   {
     id: 'realestate-01',
@@ -151,20 +189,20 @@ export const testimonials: Testimonial[] = [
     company: 'Prestige Living Spaces',
     industry: 'Real Estate',
     quote:
-      'We needed qualified buyers, not form-fillers. M Square delivered 800+ MQLs in 60 days at a CPL 38% below our previous agency. The CRM integration meant our sales team had context on every lead before the first call.',
+      'We needed qualified buyers, not form-fillers. MSquare delivered 800+ MQLs in 60 days at a CPL 38% below our previous agency. The CRM integration meant our sales team had full context on every lead before the first call.',
     metric: '800+',
-    metricLabel: 'MQLs / 60 days',
+    metricLabel: 'MQLs in 60 days',
   },
   {
-    id: 'saas-01',
-    name: 'Kiran Bose',
-    role: 'Head of Growth',
-    company: 'Clarix SaaS',
-    industry: 'B2B SaaS',
+    id: 'education-01',
+    name: 'Dr. Rajesh Kumar',
+    role: 'Director',
+    company: 'Horizon Academy',
+    industry: 'Education',
     quote:
-      'The brand relaunch M Square executed was transformative. Trial-to-paid conversion doubled within six weeks. They understood positioning, not just design — and that\'s rare.',
-    metric: '2.1x',
-    metricLabel: 'Trial → Paid Conversion',
+      'From student enrollment campaigns to automating our fee collection and attendance systems — MSquare transformed how our institution operates. We now run leaner and grow faster.',
+    metric: '2.4x',
+    metricLabel: 'Enrollment Growth',
   },
   {
     id: 'healthtech-01',
@@ -173,9 +211,9 @@ export const testimonials: Testimonial[] = [
     company: 'MedAssist HealthTech',
     industry: 'Healthcare',
     quote:
-      'Our manual patient scheduling was costing us hours every day. M Square built a custom automation stack that eliminated 80% of that overhead in four months — and our error rate dropped to near zero.',
+      'Our manual patient scheduling was costing us hours every day. MSquare built a custom automation stack that eliminated 80% of that overhead in four months — and our error rate dropped to near zero.',
     metric: '80%',
-    metricLabel: 'Manual Process Reduction',
+    metricLabel: 'Process Automation',
   },
 ]
 
@@ -183,50 +221,50 @@ export const testimonials: Testimonial[] = [
 
 export const seoMeta = {
   home: {
-    title: 'M Square — Tech-First Digital Growth Studio | Bangalore',
+    title: 'MSquare Professionals — Business Growth Infrastructure Company | Gurugram',
     description:
-      'M Square is a tech-first growth studio that combines high-performance web development, app engineering, and full-funnel marketing to scale ambitious brands. Based in Bangalore, serving globally.',
+      'MSquare Professionals Pvt. Ltd. helps businesses attract customers, automate operations, and scale through connected technology ecosystems. Growth Marketing, Business Automation & Custom Software — Gurugram, India.',
     keywords:
-      'digital growth agency, performance marketing agency India, Next.js development, web development Bangalore, SEO agency India, automation agency, UI UX design agency, brand strategy',
+      'business growth infrastructure, performance marketing Gurugram, CRM solutions India, business automation, custom software development, lead generation India, workflow automation, web development Gurugram',
   },
   about: {
-    title: 'About M Square — 26+ Years of Digital Innovation',
+    title: 'About MSquare — Building Growth Infrastructure Since 2023',
     description:
-      'Since 1996, M Square has been at the forefront of digital transformation. Learn about our mission, values, industry verticals, and the team building growth ecosystems for global brands.',
+      'Learn about MSquare Professionals Pvt. Ltd. — our mission, vision, and approach to building connected growth ecosystems for startups, enterprises, educational institutions, and healthcare organizations.',
     keywords:
-      'about M Square, digital agency Bangalore, IT solutions partner India, growth studio, digital transformation agency',
+      'about MSquare Professionals, business growth company Gurugram, IT solutions partner India, growth infrastructure company',
   },
   services: {
-    title: 'Services — Enterprise AI, Full-Stack Engineering & Strategic Marketing | M Square',
+    title: 'Services — Growth Marketing, Business Automation & Technology Solutions | MSquare',
     description:
-      'Explore M Square\'s full service catalog: Enterprise AI, web & app development, UI/UX design, SEO, performance marketing, social media management, and business automation.',
+      'MSquare offers Growth Marketing (SEO, SEM, Lead Gen), Business Automation (CRM, Workflow, Sales Automation), and Technology Solutions (Custom Software, Web, Mobile Apps) — all under one roof.',
     keywords:
-      'web development services India, performance marketing services, SEO services Bangalore, app development agency, UI UX design services, business automation, AI solutions India',
+      'performance marketing India, CRM solutions Gurugram, workflow automation, custom software development India, lead management system, web application development, mobile app development',
   },
   blog: {
-    title: 'Growth Blog — Insights, Case Studies & Playbooks | M Square',
+    title: 'Insights — Growth, Automation & Technology | MSquare',
     description:
-      'Tactical growth playbooks, engineering deep-dives, and case study breakdowns from the M Square team. Published weekly.',
+      'Practical insights on business growth, marketing automation, CRM implementation, and technology from the MSquare team.',
     keywords:
-      'digital marketing blog India, growth hacking, Next.js blog, automation case studies, performance marketing playbook, SEO tips',
+      'business growth blog India, marketing automation insights, CRM tips, software development blog, lead generation strategies',
   },
   contact: {
-    title: 'Contact M Square — Let\'s Scale Your Brand',
+    title: "Contact MSquare — Let's Build Your Growth System",
     description:
-      'Get in touch with M Square. We respond within 24 hours. HQ: SCO 40, Sector 15, Gurugram. Email: info@msquareprofessionals.com | Phone: +91 9870202444.',
+      'Get in touch with MSquare Professionals Pvt. Ltd. Office: SCO 40, 4th Floor, Civil Line, Sector 15, Gurugram, Haryana 122002. Email: info@msquareprofessionals.com | +91 9870202444.',
     keywords:
-      'contact M Square, digital agency Gurugram, hire growth agency India, web development quote',
+      'contact MSquare Professionals, business growth company Gurugram, hire automation agency India',
   },
   privacy: {
-    title: 'Privacy Policy | M Square',
+    title: 'Privacy Policy | MSquare Professionals',
     description:
-      'How M Square collects, uses, and protects your personal data. GDPR and CCPA compliant. Data controller: info@msquareprofessionals.com',
-    keywords: 'M Square privacy policy, GDPR compliant, data protection',
+      'How MSquare Professionals Pvt. Ltd. collects, uses, and protects your personal data. GDPR and CCPA compliant.',
+    keywords: 'MSquare privacy policy, data protection India',
   },
   terms: {
-    title: 'Terms of Service | M Square',
+    title: 'Terms of Service | MSquare Professionals',
     description:
-      'Terms and conditions governing your use of M Square services and website. Governed by Indian law, Gurugram jurisdiction.',
-    keywords: 'M Square terms of service, service agreement, terms and conditions',
+      'Terms and conditions governing your use of MSquare Professionals services and website. Governed by Indian law, Gurugram jurisdiction.',
+    keywords: 'MSquare terms of service, service agreement',
   },
 }

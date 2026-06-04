@@ -1,15 +1,22 @@
 import {
-  BrainCircuit,
-  Bot,
-  DatabaseZap,
-  ScanSearch,
-  Code2,
-  Smartphone,
-  Palette,
-  Cog,
   TrendingUp,
+  Search,
   Share2,
   Megaphone,
+  Target,
+  Palette,
+  Cog,
+  Users,
+  ClipboardList,
+  Workflow,
+  ShoppingCart,
+  CalendarCheck,
+  Code2,
+  Smartphone,
+  Globe,
+  Building2,
+  Puzzle,
+  LayoutDashboard,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -32,135 +39,11 @@ export interface ServicePillar {
 
 export const pillars: ServicePillar[] = [
   {
-    id: 'enterprise-ai',
+    id: 'growth-marketing',
     label: 'Pillar I',
-    headline: 'Enterprise AI',
+    headline: 'Growth Marketing',
     subtext:
-      'We embed intelligent automation and machine-learning capabilities directly into your business workflows — turning data into decisions and manual effort into scalable systems.',
-    accentColor: 'purple',
-    services: [
-      {
-        id: 'ai-strategy',
-        icon: BrainCircuit,
-        title: 'AI Strategy & Consulting',
-        description:
-          'We audit your operations, identify high-ROI automation opportunities, and build an AI adoption roadmap aligned to your business outcomes — not vendor roadmaps.',
-        features: [
-          'AI readiness assessment',
-          'Use-case prioritisation & ROI modelling',
-          'LLM selection & prompt engineering',
-          'Responsible AI governance framework',
-        ],
-      },
-      {
-        id: 'ai-automation',
-        icon: Bot,
-        title: 'Intelligent Process Automation',
-        description:
-          'Replace repetitive workflows with AI-powered bots — from document processing to customer support triage — integrated seamlessly with your existing stack.',
-        features: [
-          'RPA & AI workflow design',
-          'Conversational AI & chatbot development',
-          'Document intelligence (OCR + NLP)',
-          'Automated reporting & alerting',
-        ],
-      },
-      {
-        id: 'data-analytics',
-        icon: DatabaseZap,
-        title: 'Data Engineering & Analytics',
-        description:
-          'We design data pipelines, build unified dashboards, and surface predictive insights so your leadership can act on reality — not guesswork.',
-        features: [
-          'Data warehouse design & ETL',
-          'Real-time analytics dashboards',
-          'Predictive modelling & forecasting',
-          'Business intelligence (BI) integrations',
-        ],
-      },
-      {
-        id: 'ai-search-seo',
-        icon: ScanSearch,
-        title: 'AI-Powered SEO',
-        description:
-          'Semantic search optimisation, AI content scaling, and technical SEO engineered to dominate both traditional search and emerging AI search surfaces.',
-        features: [
-          'Semantic & entity-based SEO',
-          'AI content strategy & production',
-          'Core Web Vitals & technical SEO',
-          'AI search (SGE/GEO) optimisation',
-        ],
-      },
-    ],
-  },
-  {
-    id: 'full-stack-engineering',
-    label: 'Pillar II',
-    headline: 'Full-Stack Engineering',
-    subtext:
-      'We architect high-performance digital products — from blazing-fast web experiences and native-quality mobile apps to embedded systems and bespoke enterprise software.',
-    accentColor: 'blue',
-    services: [
-      {
-        id: 'web-development',
-        icon: Code2,
-        title: 'Web Development',
-        description:
-          'High-performance Next.js sites engineered for sub-second load times, perfect Core Web Vitals, and conversion-optimised UX at any scale.',
-        features: [
-          'Next.js 14 & React Server Components',
-          'E-commerce & Headless CMS',
-          'API & third-party integrations',
-          'Performance & Core Web Vitals optimisation',
-        ],
-      },
-      {
-        id: 'app-development',
-        icon: Smartphone,
-        title: 'App Development',
-        description:
-          'Native-quality iOS & Android solutions built with React Native — one codebase, zero compromise on feel, responsiveness, or offline capability.',
-        features: [
-          'Cross-platform React Native',
-          'Offline-first architecture',
-          'Push notifications & deep linking',
-          'App Store Optimisation (ASO)',
-        ],
-      },
-      {
-        id: 'ui-ux-design',
-        icon: Palette,
-        title: 'UI/UX Design',
-        description:
-          'Awwwards-level interface design rooted in user psychology — every pixel earns its place by advancing the conversion goal.',
-        features: [
-          'User research & journey mapping',
-          'Figma prototyping & design systems',
-          'Conversion rate optimisation (CRO)',
-          'Accessibility (WCAG 2.1 AA)',
-        ],
-      },
-      {
-        id: 'software-solutions',
-        icon: Cog,
-        title: 'Software Solutions',
-        description:
-          'Custom CRM, ERP, embedded systems, and automation platforms that eliminate manual overhead and scale with your operations.',
-        features: [
-          'Workflow & process automation',
-          'CRM & ERP development',
-          'Embedded systems & IoT',
-          'Legacy system modernisation',
-        ],
-      },
-    ],
-  },
-  {
-    id: 'strategic-marketing',
-    label: 'Pillar III',
-    headline: 'Strategic Marketing',
-    subtext:
-      'Full-funnel growth execution — from performance media that compounds ROAS, to viral content, influencer ecosystems, and brand narratives that command premium positioning.',
+      'Data-driven marketing strategies that attract the right customers, generate qualified leads, and build brands that command attention — all measured by business impact, not vanity metrics.',
     accentColor: 'orange',
     services: [
       {
@@ -168,38 +51,227 @@ export const pillars: ServicePillar[] = [
         icon: TrendingUp,
         title: 'Performance Marketing',
         description:
-          'SEO, PPC, and high-ROI lead generation across Meta, Google, and YouTube — data-driven from first impression to closed deal, with attribution that actually works.',
+          'Paid advertising across Google, Meta, and YouTube engineered for maximum ROI — from first click to closed deal, with full attribution.',
         features: [
           'Google Ads & Meta Ads management',
-          'Technical SEO & content strategy',
+          'YouTube & programmatic advertising',
           'Conversion tracking & attribution',
-          'CPA optimisation & scaling playbooks',
+          'CPA optimisation & scaling',
         ],
       },
       {
-        id: 'social-mastery',
+        id: 'lead-generation',
+        icon: Target,
+        title: 'Lead Generation',
+        description:
+          'End-to-end lead generation systems that fill your pipeline with high-intent prospects — not just form-fillers.',
+        features: [
+          'Inbound & outbound lead strategies',
+          'Landing page design & optimisation',
+          'Lead scoring & qualification',
+          'Lead nurturing & drip campaigns',
+        ],
+      },
+      {
+        id: 'seo-sem',
+        icon: Search,
+        title: 'SEO & SEM',
+        description:
+          'Dominate search results organically and through paid search — capturing demand when buyers are actively looking.',
+        features: [
+          'Technical & on-page SEO',
+          'Keyword strategy & content planning',
+          'Search Engine Marketing (SEM)',
+          'Local SEO for multi-location businesses',
+        ],
+      },
+      {
+        id: 'social-media',
         icon: Share2,
-        title: 'Social Mastery',
+        title: 'Social Media Marketing',
         description:
-          'Community-building, influencer partnerships, and PR amplification that turn your brand into a category authority with compounding organic reach.',
+          'Platform-native content, community management, and paid social campaigns that build audiences and drive conversions.',
         features: [
-          'Social media management (SMM)',
+          'Content strategy & creation',
+          'Community management',
           'Influencer & creator partnerships',
-          'PR & media outreach',
-          'Viral reels & short-form content',
+          'Paid social campaigns',
         ],
       },
       {
-        id: 'traditional-edge',
-        icon: Megaphone,
-        title: 'Traditional Edge',
+        id: 'branding',
+        icon: Palette,
+        title: 'Branding & Digital Strategy',
         description:
-          'Out-of-home advertising, comprehensive branding kits, and market research that anchor your digital momentum in the physical world.',
+          'Brand identity, messaging frameworks, and digital strategy that position your business as the clear choice in your market.',
         features: [
-          'OOH & DOOH advertising',
-          'Brand identity & style guides',
-          'Market research & competitive analysis',
-          'Print & collateral design',
+          'Brand identity & visual design',
+          'Messaging & positioning strategy',
+          'Digital marketing roadmaps',
+          'Competitive analysis',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'business-automation',
+    label: 'Pillar II',
+    headline: 'Business Automation',
+    subtext:
+      'We eliminate manual, repetitive work by building connected automation systems — from CRM and lead management to sales pipelines, workflows, and attendance — so your team focuses on what moves the business forward.',
+    accentColor: 'blue',
+    services: [
+      {
+        id: 'crm-solutions',
+        icon: Users,
+        title: 'CRM Solutions',
+        description:
+          'Custom CRM implementations that centralize customer data, automate follow-ups, and give your team full visibility into every relationship.',
+        features: [
+          'CRM setup, customisation & migration',
+          'Sales pipeline automation',
+          'Customer segmentation & tagging',
+          'Reporting & analytics dashboards',
+        ],
+      },
+      {
+        id: 'lead-management',
+        icon: ClipboardList,
+        title: 'Lead Management Systems',
+        description:
+          'End-to-end systems that capture, score, route, and nurture leads automatically — so no opportunity slips through the cracks.',
+        features: [
+          'Lead capture & routing automation',
+          'Automated follow-up sequences',
+          'Lead scoring & prioritisation',
+          'CRM & marketing platform integrations',
+        ],
+      },
+      {
+        id: 'workflow-automation',
+        icon: Workflow,
+        title: 'Workflow Automation',
+        description:
+          'Map and automate your business processes — from approvals and notifications to data sync and reporting — reducing errors and saving hours every week.',
+        features: [
+          'Business process mapping & design',
+          'No-code & custom automation builds',
+          'Cross-platform data synchronisation',
+          'Automated reporting & alerts',
+        ],
+      },
+      {
+        id: 'sales-automation',
+        icon: ShoppingCart,
+        title: 'Sales Automation',
+        description:
+          'Automate repetitive sales tasks so your team spends more time closing and less time on manual follow-up and data entry.',
+        features: [
+          'Automated outreach sequences',
+          'Proposal & quote automation',
+          'Sales activity tracking',
+          'Revenue forecasting dashboards',
+        ],
+      },
+      {
+        id: 'attendance-management',
+        icon: CalendarCheck,
+        title: 'Attendance Management Systems',
+        description:
+          'Digital attendance, leave management, and HR automation systems for schools, enterprises, and field-based teams.',
+        features: [
+          'Biometric & app-based attendance',
+          'Leave & holiday management',
+          'Payroll integration',
+          'Compliance & audit reports',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'technology-solutions',
+    label: 'Pillar III',
+    headline: 'Technology Solutions',
+    subtext:
+      'From websites and mobile apps to enterprise software and API integrations — we build technology that solves real business problems, scales with your growth, and integrates with everything you already use.',
+    accentColor: 'purple',
+    services: [
+      {
+        id: 'custom-software',
+        icon: Code2,
+        title: 'Custom Software Development',
+        description:
+          'Bespoke software applications built around your exact business requirements — not generic off-the-shelf tools that almost fit.',
+        features: [
+          'Requirements analysis & architecture',
+          'Full-stack application development',
+          'Legacy system modernisation',
+          'Ongoing maintenance & support',
+        ],
+      },
+      {
+        id: 'web-applications',
+        icon: LayoutDashboard,
+        title: 'Web Applications',
+        description:
+          'High-performance web applications — from customer portals and dashboards to complex multi-tenant SaaS platforms.',
+        features: [
+          'React / Next.js frontend development',
+          'Scalable backend & API development',
+          'Database design & optimisation',
+          'Performance & security audits',
+        ],
+      },
+      {
+        id: 'mobile-apps',
+        icon: Smartphone,
+        title: 'Mobile Applications',
+        description:
+          'Native-quality iOS and Android apps that deliver smooth, reliable experiences — built for real users, not just to check a box.',
+        features: [
+          'Cross-platform React Native development',
+          'Offline-first architecture',
+          'Push notifications & deep linking',
+          'App Store & Play Store deployment',
+        ],
+      },
+      {
+        id: 'website-development',
+        icon: Globe,
+        title: 'Website Design & Development',
+        description:
+          'Fast, conversion-optimised websites that represent your brand professionally and turn visitors into enquiries.',
+        features: [
+          'UI/UX design & prototyping',
+          'Next.js & CMS development',
+          'SEO-ready architecture',
+          'Core Web Vitals optimisation',
+        ],
+      },
+      {
+        id: 'enterprise-software',
+        icon: Building2,
+        title: 'Enterprise Software Solutions',
+        description:
+          'ERP, inventory management, multi-branch operations, and enterprise-grade platforms built for scale and reliability.',
+        features: [
+          'ERP design & implementation',
+          'Multi-location & multi-user systems',
+          'Role-based access & permissions',
+          'Enterprise security & compliance',
+        ],
+      },
+      {
+        id: 'api-integrations',
+        icon: Puzzle,
+        title: 'API Integrations & Automation Platforms',
+        description:
+          'Connect your existing tools and platforms so data flows automatically — eliminating manual data entry and system silos.',
+        features: [
+          'REST & GraphQL API development',
+          'Third-party integrations (CRMs, ERPs, payment gateways)',
+          'Zapier / Make / n8n automation builds',
+          'Webhook & event-driven architectures',
         ],
       },
     ],

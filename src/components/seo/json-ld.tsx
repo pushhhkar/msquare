@@ -8,8 +8,8 @@ export function OrganizationJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'M Square',
-    alternateName: 'MSquare Professionals Pvt Ltd',
+    name: 'MSquare Professionals',
+    alternateName: 'MSquare Professionals Pvt. Ltd.',
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
@@ -18,8 +18,8 @@ export function OrganizationJsonLd() {
       height: 64,
     },
     description:
-      'M Square is a tech-first digital growth studio combining Enterprise AI, full-stack engineering, and strategic marketing to scale ambitious brands globally. Headquartered in Gurugram, Haryana since 1996.',
-    foundingDate: '1996',
+      'MSquare Professionals Pvt. Ltd. is a Business Growth Infrastructure Company helping businesses attract customers, automate operations, and scale through connected marketing, automation, and technology ecosystems. Headquartered in Gurugram, Haryana.',
+    foundingDate: '2023',
     numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 10, maxValue: 50 },
     address: {
       '@type': 'PostalAddress',
@@ -43,14 +43,16 @@ export function OrganizationJsonLd() {
     ],
     areaServed: ['IN', 'AE', 'GB', 'US'],
     knowsAbout: [
-      'Digital Marketing',
-      'Web Development',
-      'App Development',
-      'Enterprise AI',
-      'Business Automation',
-      'UI/UX Design',
-      'SEO',
       'Performance Marketing',
+      'Lead Generation',
+      'CRM Solutions',
+      'Business Automation',
+      'Workflow Automation',
+      'Custom Software Development',
+      'Web Application Development',
+      'Mobile App Development',
+      'SEO & SEM',
+      'Sales Automation',
     ],
   }
 
@@ -224,34 +226,34 @@ export function FaqJsonLd() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'When was M Square founded?',
+        name: 'When was MSquare Professionals founded?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'MSquare Professionals Pvt Ltd was founded in 1996, making it one of the longest-standing digital growth studios in India. The company is headquartered in Gurugram, Haryana.',
+          text: 'MSquare Professionals was founded in 2023 as a partnership firm in Gurugram, India. In 2026, the company transitioned to a Private Limited Company — MSquare Professionals Pvt. Ltd. — in response to its growing business and expanding client base.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What services does M Square offer?',
+        name: 'What does MSquare Professionals do?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'M Square offers three core service pillars: Enterprise AI & Automation (AI strategy, process automation, data engineering), Full-Stack Engineering (web development, app development, UI/UX design, software solutions), and Strategic Marketing (performance marketing, SEO, social media, influencer marketing, branding).',
+          text: 'MSquare Professionals Pvt. Ltd. is a Business Growth Infrastructure Company offering three core services: Growth Marketing (performance marketing, lead generation, SEO, social media), Business Automation (CRM solutions, workflow automation, lead management, sales automation, attendance management), and Technology Solutions (custom software, web applications, mobile apps, enterprise software, API integrations).',
         },
       },
       {
         '@type': 'Question',
-        name: 'Where is M Square located?',
+        name: 'Where is MSquare Professionals located?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'M Square is headquartered at SCO 40, 4th Floor, Civil Line, Sector 15, Gurugram, Haryana 122002, India, with regional offices in Dubai, UAE and London, UK.',
+          text: 'MSquare Professionals Pvt. Ltd. is headquartered at SCO 40, 4th Floor, Civil Line, Sector 15, Gurugram, Haryana 122002, India.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How many platforms has M Square designed?',
+        name: 'Who does MSquare Professionals work with?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'M Square has designed and deployed 100+ digital platforms across healthcare, education, real estate, fintech, e-commerce, and SaaS industries.',
+          text: 'MSquare works with startups, educational institutions, healthcare organizations, retail businesses, professional service firms, manufacturers, and growing enterprises that are looking to modernize operations and accelerate growth through technology.',
         },
       },
     ],

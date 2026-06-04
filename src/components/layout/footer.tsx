@@ -9,12 +9,12 @@ import { Logo } from '@/components/ui/logo'
 import { contact } from '@/data/content'
 
 const SERVICES = [
-  { label: 'Enterprise AI & Automation', href: '/services' },
-  { label: 'Web Development', href: '/services' },
-  { label: 'App Development', href: '/services' },
-  { label: 'UI/UX Design', href: '/services' },
   { label: 'Performance Marketing', href: '/services' },
-  { label: 'Social Mastery', href: '/services' },
+  { label: 'Lead Generation', href: '/services' },
+  { label: 'CRM Solutions', href: '/services' },
+  { label: 'Workflow Automation', href: '/services' },
+  { label: 'Custom Software Development', href: '/services' },
+  { label: 'Web & Mobile Applications', href: '/services' },
 ]
 
 const SOCIAL = [
@@ -41,8 +41,8 @@ export default function Footer() {
           >
             <Logo size="lg" className="mb-6" />
             <p className="text-zinc-400 mb-6 max-w-md leading-relaxed text-sm">
-              Transforming Digital Identities into Legacies. We build robust digital ecosystems
-              where data-driven strategy meets high-end design — since 1996.
+              One Partner. One Ecosystem. Unlimited Growth.<br />
+              We help businesses attract customers, automate operations, and scale through connected technology ecosystems.
             </p>
             <div className="flex space-x-4" role="list" aria-label="Social media links">
               {SOCIAL.map(({ label, Icon, href }) => (
@@ -144,7 +144,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-zinc-600 text-sm">
-              © {currentYear} M Square (Msquare Professionals). All rights reserved.
+              © {currentYear} MSquare Professionals Pvt. Ltd. All rights reserved.
             </p>
             <nav aria-label="Legal links" className="flex space-x-6">
               <Link

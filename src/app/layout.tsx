@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/seo/json-ld'
+import { WhatsAppButton } from '@/components/ui/whatsapp-button'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,33 +23,33 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'M Square — Tech-First Digital Growth Studio | Bangalore',
-    template: '%s | M Square',
+    default: 'MSquare Professionals — Business Growth Infrastructure Company | Gurugram',
+    template: '%s | MSquare Professionals',
   },
   description:
-    'M Square is a tech-first growth studio combining high-performance web & app development, Enterprise AI, and full-funnel marketing to scale ambitious brands globally. Headquartered in Bangalore since 1996.',
+    'MSquare Professionals Pvt. Ltd. helps businesses attract customers, automate operations, and scale through connected technology ecosystems. Growth Marketing, Business Automation & Custom Software — Gurugram, India.',
   keywords: [
-    'digital growth agency India',
-    'performance marketing agency Bangalore',
-    'Next.js development agency',
-    'Enterprise AI consulting',
-    'web development Bangalore',
-    'SEO agency India',
-    'business automation',
-    'UI UX design agency',
-    'brand strategy',
-    'Msquare Professionals',
+    'business growth infrastructure India',
+    'performance marketing Gurugram',
+    'CRM solutions India',
+    'business automation company',
+    'custom software development Gurugram',
+    'lead generation India',
+    'workflow automation',
+    'web development Gurugram',
+    'MSquare Professionals',
+    'growth infrastructure company',
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'M Square — Tech-First Digital Growth Studio',
+    title: 'MSquare Professionals — Business Growth Infrastructure Company',
     description:
-      'Combining Enterprise AI, full-stack engineering, and strategic marketing to build digital ecosystems that scale. Based in Bangalore, serving globally.',
+      'Growth Marketing, Business Automation, and Technology Solutions under one roof. Building connected ecosystems that make growth predictable.',
     type: 'website',
     url: BASE_URL,
-    siteName: 'M Square',
+    siteName: 'MSquare Professionals',
     images: [
       {
         url: '/og-default.png',
@@ -60,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'M Square — Tech-First Digital Growth Studio',
+    title: 'MSquare Professionals — Business Growth Infrastructure Company',
     description:
-      'Enterprise AI, full-stack engineering, and strategic marketing under one roof. 100+ platforms designed since 1996.',
+      'Growth Marketing, Business Automation & Technology Solutions under one roof. 100+ platforms built. Gurugram, India.',
     images: ['/og-default.png'],
     creator: '@msquare',
     site: '@msquare',
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans antialiased">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   )

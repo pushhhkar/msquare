@@ -5,117 +5,50 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
-  Target,
-  Zap,
-  Lightbulb,
-  Users,
   HeartPulse,
   GraduationCap,
   Building2,
-  Landmark,
+  ShoppingBag,
   Quote,
+  CheckCircle2,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Navigation from '@/components/layout/navigation'
 import Footer from '@/components/layout/footer'
-import { brand, stats, verticals, testimonials } from '@/data/content'
+import { brand, stats, verticals, testimonials, whyUs } from '@/data/content'
 
-// Map icon string → Lucide component
 const VERTICAL_ICONS: Record<string, React.ElementType> = {
   HeartPulse,
   GraduationCap,
   Building2,
-  Landmark,
+  ShoppingBag,
 }
-
-const VALUES = [
-  {
-    icon: Target,
-    title: 'Results-Driven',
-    description:
-      'We measure success by one metric: your growth. Every strategy, every sprint, every deliverable is designed to move a number that matters to your business.',
-  },
-  {
-    icon: Zap,
-    title: 'Acceleration First',
-    description:
-      'We don\'t solve problems once — we build systems that prevent them from recurring and create compounding advantages over time.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Innovation at Core',
-    description:
-      'From enterprise AI to Awwwards-level design, we operate at the frontier — bringing capabilities to our clients before those capabilities become commodities.',
-  },
-  {
-    icon: Users,
-    title: 'True Partnership',
-    description:
-      'We become an extension of your team, embedded in your goals, your cadence, and your culture. Your success is the only KPI that matters here.',
-  },
-]
 
 const TIMELINE = [
   {
-    year: '1996',
+    year: '2023',
     title: 'Founded',
     description:
-      'Msquare Professionals established with a singular mission: to become the most trusted IT solutions partner for businesses navigating digital complexity.',
+      'MSquare Professionals was established as a partnership firm in Gurugram, India — with a clear mission: to help businesses build connected growth systems combining marketing, automation, and technology.',
   },
   {
-    year: '2004',
-    title: 'Enterprise Expansion',
+    year: '2024',
+    title: 'Growing Client Base',
     description:
-      'Expanded into enterprise software development and embedded systems, serving clients across healthcare, education, and financial services.',
-  },
-  {
-    year: '2012',
-    title: 'Digital Marketing Arm',
-    description:
-      'Launched our integrated marketing division — combining performance media, SEO, and brand strategy under one roof with our engineering capabilities.',
-  },
-  {
-    year: '2018',
-    title: 'Global Reach',
-    description:
-      'Opened regional offices in Dubai and London, extending our reach to MENA and European markets while headquartering innovation in Gurugram.',
-  },
-  {
-    year: '2022',
-    title: 'AI-First Pivot',
-    description:
-      'Launched our Enterprise AI practice, embedding intelligent automation and machine learning into client workflows — from document processing to predictive analytics.',
+      'Expanded our team and service offerings across Growth Marketing, CRM automation, and custom software development, serving startups, educational institutions, healthcare organizations, and real estate firms.',
   },
   {
     year: '2025',
-    title: 'Platform Era',
+    title: '100+ Platforms Built',
     description:
-      'Crossed 100+ platforms designed and deployed. Rebranded as M Square to reflect our evolution into a full-spectrum digital acceleration partner.',
-  },
-]
-
-const APPROACH = [
-  {
-    step: '01',
-    title: 'Diagnose',
-    description:
-      'We audit your digital ecosystem, competitive landscape, and business model to surface the highest-leverage opportunities — not symptoms.',
-    color: 'text-primary-orange',
+      'Crossed the milestone of 100+ platforms designed and deployed. Deepened expertise in lead management systems, workflow automation, and enterprise software solutions.',
   },
   {
-    step: '02',
-    title: 'Architect',
+    year: '2026',
+    title: 'Incorporated as Pvt. Ltd.',
     description:
-      'We design a system — not a campaign. Technology, marketing, and data are planned as an integrated growth engine from day one.',
-    color: 'text-primary-blue',
-  },
-  {
-    step: '03',
-    title: 'Execute',
-    description:
-      'We ship with precision in focused sprints, measuring every signal and compounding on what works — no set-and-forget.',
-    color: 'text-primary-orange',
+      'In response to our growing business and expanding client base, we transitioned to MSquare Professionals Pvt. Ltd. — a Private Limited Company structure built for scale.',
   },
 ]
 
@@ -137,15 +70,14 @@ export default function AboutPage() {
               Our Story
             </span>
             <h1 className="font-display text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-              Est. {brand.foundedYear}
-              <span className="block text-zinc-500">Digital Transformation</span>
+              Building Growth Infrastructure
+              <span className="block text-zinc-500">for Modern Businesses.</span>
             </h1>
             <p className="text-xl text-zinc-400 leading-relaxed max-w-3xl mb-12">
-              {brand.mission}
+              {brand.about}
             </p>
 
-            {/* Quick stats */}
-            <div className="flex flex-wrap gap-12">
+            <div className="flex flex-wrap gap-10">
               {stats.map((s) => (
                 <div key={s.label}>
                   <div className={`font-display text-4xl font-bold mb-1 ${s.accent === 'orange' ? 'text-primary-orange' : 'text-primary-blue'}`}>
@@ -159,7 +91,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Mission & Vision ── */}
+      {/* ── The Problem We Solve ── */}
       <section className="section-padding bg-zinc-950 border-b border-zinc-900">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -170,12 +102,26 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-medium text-primary-orange tracking-widest uppercase block mb-4">
-                Mission
+                The Problem
               </span>
-              <h2 className="font-display text-3xl font-bold text-white mb-4">
+              <h2 className="font-display text-3xl font-bold text-white mb-6">
                 Why We Exist
               </h2>
-              <p className="text-zinc-400 leading-relaxed">{brand.mission}</p>
+              <div className="space-y-4 text-zinc-400 leading-relaxed">
+                <p>
+                  Businesses today face a common challenge: growth is often managed through disconnected
+                  systems, multiple service providers, and fragmented processes. Marketing operates on one
+                  platform, customer management on another, while operations and reporting are spread across
+                  different tools.
+                </p>
+                <p>
+                  As organizations grow, these disconnected systems create inefficiencies that slow down
+                  progress and limit scalability.
+                </p>
+                <p className="text-white font-medium">
+                  MSquare Professionals Pvt. Ltd. was founded to solve this challenge.
+                </p>
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 24 }}
@@ -184,62 +130,59 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-medium text-primary-blue tracking-widest uppercase block mb-4">
-                Vision
+                Our Approach
               </span>
-              <h2 className="font-display text-3xl font-bold text-white mb-4">
-                Where We&apos;re Going
+              <h2 className="font-display text-3xl font-bold text-white mb-6">
+                One Connected System
               </h2>
+              <div className="space-y-4 text-zinc-400 leading-relaxed">
+                <p>
+                  We believe that sustainable growth is not achieved through marketing alone, nor through
+                  software in isolation. True growth happens when customer acquisition, operational
+                  efficiency, and technology work together as a single system.
+                </p>
+                <p>
+                  From attracting and converting customers to automating business processes and developing
+                  custom applications, we help businesses create an environment where growth becomes
+                  structured, measurable, and repeatable.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Mission & Vision ── */}
+      <section className="section-padding border-b border-zinc-900">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-zinc-950 border border-zinc-800 rounded-2xl p-8 lg:p-10"
+            >
+              <span className="text-xs font-medium text-primary-orange tracking-widest uppercase block mb-4">Mission</span>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">What Drives Us</h2>
+              <p className="text-zinc-400 leading-relaxed">{brand.mission}</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-zinc-950 border border-zinc-800 rounded-2xl p-8 lg:p-10"
+            >
+              <span className="text-xs font-medium text-primary-blue tracking-widest uppercase block mb-4">Vision</span>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">Where We&apos;re Going</h2>
               <p className="text-zinc-400 leading-relaxed">{brand.vision}</p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── Values ── */}
-      <section className="section-padding border-b border-zinc-900">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-14"
-          >
-            <h2 className="font-display text-3xl lg:text-5xl font-bold text-white mb-4">
-              Our Philosophy
-            </h2>
-            <p className="text-zinc-400 text-lg max-w-2xl">
-              The operating principles that guide every engagement, every build, every result.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {VALUES.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.08, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full bg-zinc-950 border border-zinc-800 rounded-2xl hover:border-zinc-700 transition-colors duration-200">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-orange/20 to-primary-blue/20 rounded-xl flex items-center justify-center mb-4">
-                      <value.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <CardTitle className="text-xl font-display text-white">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-zinc-400 leading-relaxed">{value.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Approach ── */}
+      {/* ── Why MSquare ── */}
       <section className="section-padding bg-zinc-950 border-b border-zinc-900">
         <div className="container-custom">
           <motion.div
@@ -250,26 +193,28 @@ export default function AboutPage() {
             className="mb-14"
           >
             <h2 className="font-display text-3xl lg:text-5xl font-bold text-white mb-4">
-              The M Square Approach
+              Why MSquare
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl">
-              A three-phase methodology built for sustainable, compounding growth.
+              Unlike traditional marketing agencies or standalone software vendors — we combine both disciplines to create a unified growth ecosystem.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {APPROACH.map((step, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyUs.map((item, index) => (
               <motion.div
-                key={step.title}
+                key={item.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.07, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-zinc-950 border border-zinc-800 rounded-2xl p-8"
+                className="bg-zinc-950 border border-zinc-800 rounded-2xl p-7 hover:border-zinc-700 transition-colors duration-200"
               >
-                <div className={`font-display text-5xl font-bold mb-4 ${step.color}`}>{step.step}</div>
-                <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
-                <p className="text-zinc-400 leading-relaxed">{step.description}</p>
+                <div className="flex items-start gap-3 mb-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary-orange flex-shrink-0 mt-0.5" />
+                  <h3 className="font-display text-lg font-semibold text-white">{item.title}</h3>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed pl-8">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -290,7 +235,7 @@ export default function AboutPage() {
               Our Journey
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl">
-              Nearly three decades of building, shipping, and evolving — from IT solutions pioneer to AI-first growth studio.
+              From a partnership firm to a Private Limited Company — building growth systems for businesses across India.
             </p>
           </motion.div>
 
@@ -337,13 +282,13 @@ export default function AboutPage() {
               Built for Your Sector
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl">
-              Deep vertical expertise means we understand your compliance requirements, your user personas, and your competitive dynamics before we write a single line of code.
+              We work with startups, educational institutions, healthcare organizations, retail businesses, professional service firms, manufacturers, and growing enterprises.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {verticals.map((v, index) => {
-              const Icon = VERTICAL_ICONS[v.icon] ?? Lightbulb
+              const Icon = VERTICAL_ICONS[v.icon] ?? Building2
               return (
                 <motion.div
                   key={v.id}
@@ -445,20 +390,21 @@ export default function AboutPage() {
           className="text-center max-w-4xl mx-auto"
         >
           <h2 className="text-3xl lg:text-5xl font-display font-bold text-white mb-6">
-            Ready to Build Your Legacy?
+            Ready to Make Growth Predictable?
           </h2>
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Let&apos;s discuss how our unique approach to digital acceleration can transform your business.
+            Let&apos;s discuss how our integrated approach can help your business attract customers,
+            automate operations, and scale with confidence.
           </p>
           <Button
             asChild
             size="lg"
             variant="outline"
             className="bg-white text-black hover:bg-zinc-100 border-white text-lg px-8 py-4 group"
-            aria-label="Scale your brand — contact M Square"
+            aria-label="Build your growth system with MSquare"
           >
             <Link href="/contact">
-              Scale Your Brand
+              Build Your Growth System
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
